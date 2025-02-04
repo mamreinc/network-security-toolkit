@@ -1,2 +1,67 @@
-# Documentation File
+# Wireshark Filters for Network Security Analysis
 
+## Common Filters:
+- Show only HTTP traffic:
+  ```
+  http
+  ```
+- Show only HTTPS traffic:
+  ```
+  tls
+  ```
+- Show only DNS queries:
+  ```
+  dns
+  ```
+- Show only TCP traffic:
+  ```
+  tcp
+  ```
+- Show only UDP traffic:
+  ```
+  udp
+  ```
+- Show only ICMP traffic:
+  ```
+  icmp
+  ```
+- Show only packets from a specific IP:
+  ```
+  ip.src == 192.168.1.1
+  ```
+- Show only packets to a specific IP:
+  ```
+  ip.dst == 192.168.1.1
+  ```
+- Show packets from or to a specific IP:
+  ```
+  ip.addr == 192.168.1.1
+  ```
+- Show packets from a specific MAC address:
+  ```
+  eth.src == 00:1A:2B:3C:4D:5E
+  ```
+- Show packets to a specific MAC address:
+  ```
+  eth.dst == 00:1A:2B:3C:4D:5E
+  ```
+- Show only packets with a specific port:
+  ```
+  tcp.port == 443
+  ```
+- Show only packets with suspicious payload size:
+  ```
+  frame.len > 1000
+  ```
+- Show only packets containing a specific string:
+  ```
+  frame contains "password"
+  ```
+- Show only packets with SYN flag set:
+  ```
+  tcp.flags.syn == 1
+  ```
+- Show only packets with RST flag set:
+  ```
+  tcp.flags.reset == 1
+  
